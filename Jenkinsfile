@@ -22,6 +22,7 @@ pipeline {
 				}
 			}
 		}
+		}
 		
 		stage('Push Docker image'){
 			when {
