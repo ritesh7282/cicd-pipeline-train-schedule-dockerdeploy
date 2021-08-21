@@ -24,19 +24,5 @@ pipeline {
 		}
 		}
 		
-		stage('Push Docker image'){
-			when {
-				branch 'master'
-			}
-			
-			steps{
-				script {
-					docker.withRegistry('https://hub.docker.com/','docker_hub'){
-						app.push("${env.BUILD_NUMBER}")
-						app.push("latest")
-					}
-				}
-			}
-		}
     }
 }
